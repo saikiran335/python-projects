@@ -40,18 +40,22 @@ while True:
         m=int(input("enter ur choice"))
         if(m==1):
             name=input("\nenter name to edit")
-            newname=input("\nenter new name to edit")
+            
             for x,y in contacts.items():
-                if(name==x):
-                    x=newname
+                if(x==name):
+                    newname=input("\nenter new name to edit")
+                    newdic={newname:y}
+                    contacts.update(newdic)
                 else:
                     print("\n Contact not found")
         if(m==2):
             name=input("\nenter name to edit")
-            newnumber=input("\nenter new number to edit")
+            
             for x,y in contacts.items():
-                if(name==x):
-                    y=newnumber
+                if(x==name):
+                    newnumber=input("\nenter new number to edit")
+                    newdic={x:newnumber}
+                    contacts.update(newdic)
                 else:
                     print("\n Contact not found")
         print(contacts)
